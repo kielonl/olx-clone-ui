@@ -15,7 +15,6 @@ export const apiRequest = async (
       data: data,
       headers: headers,
     });
-
     return response?.data;
   } catch (error) {
     return error;

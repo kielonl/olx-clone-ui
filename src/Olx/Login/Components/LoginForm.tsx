@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { MediaButtons } from "./SocialMediaButtons";
-import "../styles/LoginForm.scss";
 import { Otherwise } from "./Otherwise";
 import { emailValidation, passwordValidation } from "./formValidation";
+import { LoginButton } from "./LoginButton";
+import "../styles/LoginForm.scss";
 
 export const LoginForm = () => {
   const [type, setType] = useState("login");
@@ -10,13 +11,6 @@ export const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [emailValid, setEmailValid] = useState(false);
   const [passwordValid, setPasswordValid] = useState(false);
-
-  useEffect(() => {
-    setEmailValid(emailValidation(email));
-  }, [email]);
-  useEffect(() => {
-    setPasswordValid(passwordValidation(password));
-  }, [password]);
 
   return (
     <div className="login-form-wrapper">
@@ -52,12 +46,14 @@ export const LoginForm = () => {
               <input
                 type="text"
                 onChange={(e) => setEmail(e.target.value)}
+                onBlur={() => setEmailValid(emailValidation(email))} // calls only when finished typing
                 className={`${emailValid ? "valid" : "notvalid"}`} //change so there can be default class
               />
               <div className="text-above-input">Hasło</div>
               <input
                 type="text"
                 onChange={(e) => setPassword(e.target.value)}
+                onBlur={() => setPasswordValid(passwordValidation(password))}
                 className={`${passwordValid ? "valid" : "notvalid"}`} //change so there can be default class
               />
             </div>
@@ -65,12 +61,13 @@ export const LoginForm = () => {
             <div className="forgot-password">Nie pamiętasz hasła?</div>
 
             <div className="login-form-bottom">
-              <button
-                className="login-button"
-                disabled={emailValid && passwordValid ? false : true}
-              >
-                {type === "login" ? "Zaloguj się" : "Zarejestruj się"}
-              </button>
+              <LoginButton
+                buttonType={
+                  type === "login" ? "Zaloguj się" : "Zarejestruj się"
+                }
+                disabled={!(emailValid && passwordValid)}
+                data={{ email, password }}
+              />
             </div>
             <div className="login-form-footer">
               {type === "login" && (
