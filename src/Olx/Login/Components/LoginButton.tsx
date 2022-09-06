@@ -2,24 +2,28 @@ import React from "react";
 import { apiRequest } from "../../../api/api";
 interface Props {
   disabled: boolean;
-  buttonType: string;
+  buttonContent: string;
   data: {
     email: string;
     password: string;
   };
+  method: string;
+  endpoint: string;
 }
 export const LoginButton: React.FC<Props> = ({
-  buttonType,
+  buttonContent,
   disabled,
   data,
+  method,
+  endpoint,
 }) => {
   const handleSubmit = async () => {
-    const sendCredentials = await apiRequest("post", "/user", data);
+    const sendCredentials = await apiRequest(method, endpoint, data);
     console.log(sendCredentials);
   };
   return (
     <button className="login-button" disabled={disabled} onClick={handleSubmit}>
-      {buttonType}
+      {buttonContent}
     </button>
   );
 };

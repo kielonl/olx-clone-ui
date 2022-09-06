@@ -4,6 +4,8 @@ import { Otherwise } from "./Otherwise";
 import { emailValidation, passwordValidation } from "./formValidation";
 import { LoginButton } from "./LoginButton";
 import "../styles/LoginForm.scss";
+import { HTTP_METHODS } from "../../../constants/HTTP_METHODS";
+import { ENDPOINTS } from "../../../constants/ENDPOINTS";
 
 export const LoginForm = () => {
   const [type, setType] = useState("login");
@@ -62,11 +64,13 @@ export const LoginForm = () => {
 
             <div className="login-form-bottom">
               <LoginButton
-                buttonType={
+                buttonContent={
                   type === "login" ? "Zaloguj się" : "Zarejestruj się"
                 }
                 disabled={!(emailValid && passwordValid)}
                 data={{ email, password }}
+                method={HTTP_METHODS.POST}
+                endpoint={ENDPOINTS.LOGIN}
               />
             </div>
             <div className="login-form-footer">
