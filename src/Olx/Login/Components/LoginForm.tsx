@@ -8,7 +8,7 @@ import { HTTP_METHODS } from "../../../constants/HTTP_METHODS";
 import { ENDPOINTS } from "../../../constants/ENDPOINTS";
 
 export const LoginForm = () => {
-  const [type, setType] = useState("login");
+  const [type, setType] = useState("Zaloguj się");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailValid, setEmailValid] = useState(false);
@@ -21,16 +21,18 @@ export const LoginForm = () => {
         <div className="login-form-content">
           <div className="login-form-upper">
             <span
-              className={`login-form-button ${type === "login" && "selected"}`}
-              onClick={() => setType("login")}
+              className={`login-form-button ${
+                type === "Zaloguj się" && "selected"
+              }`}
+              onClick={() => setType("Zaloguj się")}
             >
               Zaloguj się
             </span>
             <span
               className={`login-form-button ${
-                type === "register" && "selected"
+                type === "Zarejestruj się" && "selected"
               }`}
-              onClick={() => setType("register")}
+              onClick={() => setType("Zarejestruj się")}
             >
               Zarejestruj się
             </span>
@@ -63,16 +65,25 @@ export const LoginForm = () => {
             <div className="forgot-password">Nie pamiętasz hasła?</div>
 
             <div className="login-form-bottom">
-              <LoginButton
-                buttonContent={
-                  type === "login" ? "Zaloguj się" : "Zarejestruj się"
-                }
-                disabled={!(emailValid && passwordValid)}
-                data={{ email, password }}
-                method={HTTP_METHODS.POST}
-                endpoint={ENDPOINTS.LOGIN}
-              />
+              {type === "Zaloguj się" ? (
+                <LoginButton //logging
+                  buttonContent={type}
+                  disabled={!(emailValid && passwordValid)}
+                  data={{ email, password }}
+                  method={HTTP_METHODS.POST}
+                  endpoint={ENDPOINTS.LOGIN}
+                />
+              ) : (
+                <LoginButton //register
+                  buttonContent={type}
+                  disabled={!(emailValid && passwordValid)}
+                  data={{ email, password }}
+                  method={HTTP_METHODS.POST}
+                  endpoint={ENDPOINTS.REGISTER}
+                />
+              )}
             </div>
+
             <div className="login-form-footer">
               {type === "login" && (
                 <>

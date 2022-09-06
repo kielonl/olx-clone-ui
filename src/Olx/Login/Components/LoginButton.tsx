@@ -30,7 +30,7 @@ export const LoginButton: React.FC<Props> = ({
     }
     //fix this so it doesnt need ts-ignore
     //@ts-ignore
-    setUser(sendCredentials);
+    if (endpoint === "/auth/login") setUser(sendCredentials);
   };
   return (
     <button className="login-button" disabled={disabled} onClick={handleSubmit}>
