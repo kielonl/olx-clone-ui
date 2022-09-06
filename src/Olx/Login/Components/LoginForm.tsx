@@ -37,7 +37,7 @@ export const LoginForm = () => {
               Zarejestruj się
             </span>
           </div>
-          {type === "register" && (
+          {type === "Zarejestruj się" && (
             <>
               <MediaButtons />
               <Otherwise />
@@ -85,7 +85,7 @@ export const LoginForm = () => {
             </div>
 
             <div className="login-form-footer">
-              {type === "login" && (
+              {type === "Zaloguj się" && (
                 <>
                   <Otherwise />
                   <MediaButtons />
