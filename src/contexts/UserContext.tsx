@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { isObjectEmpty } from "../helpers/helpers";
 import * as storageManager from "../StorageManager";
 interface Props {
   children: React.ReactNode;
@@ -26,7 +27,7 @@ export const UserProvider: React.FC<Props> = ({ children }) => {
     setUser(storageManager.read("user"));
   }, []);
   useEffect(() => {
-    if (user && Object.keys(user).length !== 0) {
+    if (isObjectEmpty(user)) {
       storageManager.save("user", user);
     }
   }, [user]);

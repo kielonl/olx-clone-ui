@@ -4,7 +4,7 @@ import { UserContext } from "../../../contexts/UserContext";
 interface Props {
   disabled: boolean;
   buttonContent: string;
-  data: {
+  credentials: {
     email: string;
     password: string;
   };
@@ -12,17 +12,18 @@ interface Props {
   endpoint: string;
 }
 
-export const LoginButton: React.FC<Props> = ({
+export const SubmitButton: React.FC<Props> = ({
   buttonContent,
   disabled,
-  data,
+  credentials,
   method,
   endpoint,
 }) => {
   const { setUser } = React.useContext(UserContext);
   const handleSubmit = async () => {
-    const sendCredentials = await apiRequest(method, endpoint, data);
+    const sendCredentials = await apiRequest(method, endpoint, credentials);
 
+    console.log(sendCredentials);
     const errorResponse = sendCredentials?.response?.data.message;
     if (errorResponse) {
       console.error(errorResponse);

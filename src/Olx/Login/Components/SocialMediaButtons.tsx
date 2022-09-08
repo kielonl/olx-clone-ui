@@ -1,4 +1,3 @@
-// import icon from "../../assets/facebookIcon.png";
 import "../styles/SocialMediaButtons.scss";
 export const FacebookButton = () => {
   return (
