@@ -21,7 +21,7 @@ const defaultState = {
 export const UserContext = React.createContext<Context>(defaultState);
 
 export const UserProvider: React.FC<Props> = ({ children }) => {
-  const [user, setUser] = useState<any>("");
+  const [user, setUser] = useState<any>({});
 
   useEffect(() => {
     setUser(storageManager.read("user"));

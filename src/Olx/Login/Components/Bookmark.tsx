@@ -7,7 +7,7 @@ interface Props {
   currType: FORM_CLASSES;
 }
 
-export const FormBookmark: React.FC<Props> = ({
+export const Bookmark: React.FC<Props> = ({
   bookmarkType,
   setType,
   currType,

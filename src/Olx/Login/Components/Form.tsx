@@ -5,7 +5,7 @@ import { MediaButtons } from "./SocialMediaButtons";
 import { emailValidation, passwordValidation } from "./Validation";
 import { Otherwise } from "./Otherwise";
 import { FORM_CLASSES } from "../../../constants/FORM_CLASSES";
-import { FormBookmark } from "./FormBookmark";
+import { Bookmark } from "./Bookmark";
 import { RenderSubmitButton } from "./RenderSubmitButton";
 import { CredentialsInput } from "./CredentialsInput";
 
@@ -30,12 +30,12 @@ export const LoginForm = () => {
       <div className="growing-circle"></div> {/* background animation*/}
       <div className="login-form-box">
         <div className="login-form-upper">
-          <FormBookmark
+          <Bookmark
             bookmarkType={FORM_CLASSES.LOGIN}
             currType={currentBookmarkType}
             setType={setBookmarkType}
           />
-          <FormBookmark
+          <Bookmark
             bookmarkType={FORM_CLASSES.REGISTER}
             currType={currentBookmarkType}
             setType={setBookmarkType}
