@@ -1,5 +1,6 @@
 .categories-wrapper {
-  height: 50vh;
+  color: #022f34;
+  min-height: 50vh;
   width: 100vw;
   h1 {
     text-align: center;
@@ -23,7 +24,6 @@
 .category-title {
   margin-top: 0.5rem;
   font-weight: bold;
-  color: #022f34;
   width: max-content;
   &:hover {
     color: white;

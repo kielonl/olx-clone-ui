@@ -1,4 +1,5 @@
 import { Categories } from "./Categories";
+import { Promoted } from "./Promoted";
 import { SearchBar } from "./SearchBar";
 
 export const MainPage = () => {
@@ -6,6 +7,7 @@ export const MainPage = () => {
     <div className="mainpage-wrapper">
       <SearchBar />
       <Categories />
+      <Promoted />
     </div>
   );
 };
