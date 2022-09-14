@@ -16,7 +16,7 @@ export interface CredentialsProps {
   setCredential: (value: React.SetStateAction<string>) => void;
   credentialValid: boolean;
 }
-export interface SubmitProps {
+export interface RenderSubmitProps {
   currentBookmarkType: FORM_CLASSES;
   credentials: {
     email: string;
@@ -25,7 +25,7 @@ export interface SubmitProps {
   isButtonDisabled: boolean;
 }
 
-interface test extends SubmitProps {
+interface SubmitProps extends RenderSubmitProps {
   method: string;
   endpoint: string;
   buttonContent: string;

@@ -1,15 +1,11 @@
 import React from "react";
 import { apiRequest } from "../../../api/api";
 import { UserContext } from "../../../contexts/UserContext";
-import { test } from "../../../types";
+import { SubmitProps } from "../../../types";
 
-export const SubmitButton: React.FC<Omit<test, "currentBookmarkType">> = ({
-  buttonContent,
-  isButtonDisabled,
-  credentials,
-  method,
-  endpoint,
-}) => {
+export const SubmitButton: React.FC<
+  Omit<SubmitProps, "currentBookmarkType">
+> = ({ buttonContent, isButtonDisabled, credentials, method, endpoint }) => {
   const { setUser } = React.useContext(UserContext);
   const handleSubmit = async () => {
     const sendCredentials = await apiRequest(method, endpoint, credentials);

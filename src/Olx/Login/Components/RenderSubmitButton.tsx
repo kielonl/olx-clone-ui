@@ -2,10 +2,10 @@ import React from "react";
 import { ENDPOINTS } from "../../../constants/ENDPOINTS";
 import { FORM_CLASSES } from "../../../constants/FORM_CLASSES";
 import { HTTP_METHODS } from "../../../constants/HTTP_METHODS";
-import { SubmitProps } from "../../../types";
+import { RenderSubmitProps } from "../../../types";
 import { SubmitButton } from "./SubmitButton";
 
-export const RenderSubmitButton: React.FC<SubmitProps> = ({
+export const RenderSubmitButton: React.FC<RenderSubmitProps> = ({
   currentBookmarkType,
   credentials,
   isButtonDisabled,
