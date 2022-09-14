@@ -1,13 +1,8 @@
 import React from "react";
 import { FORM_CLASSES } from "../../../constants/FORM_CLASSES";
+import { BookmarkProps } from "../../../types";
 
-interface Props {
-  bookmarkType: FORM_CLASSES;
-  setType: React.Dispatch<React.SetStateAction<FORM_CLASSES>>;
-  currType: FORM_CLASSES;
-}
-
-export const Bookmark: React.FC<Props> = ({
+export const Bookmark: React.FC<BookmarkProps> = ({
   bookmarkType,
   setType,
   currType,

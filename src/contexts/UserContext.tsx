@@ -1,18 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { isObjectEmpty } from "../helpers/helpers";
 import * as storageManager from "../StorageManager";
-interface Props {
-  children: React.ReactNode;
-}
-
-interface User {
-  email: string;
-  password: string;
-}
-interface Context {
-  user: string;
-  setUser?: (user: User) => void;
-}
+import { Context, UserContextProps } from "../types";
 
 const defaultState = {
   user: "",
@@ -20,7 +9,7 @@ const defaultState = {
 
 export const UserContext = React.createContext<Context>(defaultState);
 
-export const UserProvider: React.FC<Props> = ({ children }) => {
+export const UserProvider: React.FC<UserContextProps> = ({ children }) => {
   const [user, setUser] = useState<any>({});
 
   useEffect(() => {

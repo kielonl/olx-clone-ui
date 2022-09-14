@@ -1,11 +1,7 @@
 import { FORM_CLASSES } from "../../../constants/FORM_CLASSES";
+import { CredentialsProps } from "../../../types";
 
-interface Props {
-  setCredential: (value: React.SetStateAction<string>) => void;
-  credentialValid: boolean;
-}
-
-export const CredentialsInput: React.FC<Props> = ({
+export const CredentialsInput: React.FC<CredentialsProps> = ({
   setCredential,
   credentialValid,
 }) => {

@@ -1,20 +1,11 @@
 import React from "react";
 import { apiRequest } from "../../../api/api";
 import { UserContext } from "../../../contexts/UserContext";
-interface Props {
-  disabled: boolean;
-  buttonContent: string;
-  credentials: {
-    email: string;
-    password: string;
-  };
-  method: string;
-  endpoint: string;
-}
+import { test } from "../../../types";
 
-export const SubmitButton: React.FC<Props> = ({
+export const SubmitButton: React.FC<Omit<test, "currentBookmarkType">> = ({
   buttonContent,
-  disabled,
+  isButtonDisabled,
   credentials,
   method,
   endpoint,
@@ -22,8 +13,6 @@ export const SubmitButton: React.FC<Props> = ({
   const { setUser } = React.useContext(UserContext);
   const handleSubmit = async () => {
     const sendCredentials = await apiRequest(method, endpoint, credentials);
-
-    console.log(sendCredentials);
     const errorResponse = sendCredentials?.response?.data.message;
     if (errorResponse) {
       console.error(errorResponse);
@@ -34,7 +23,11 @@ export const SubmitButton: React.FC<Props> = ({
     if (endpoint === "/auth/login") setUser(sendCredentials);
   };
   return (
-    <button className="login-button" disabled={disabled} onClick={handleSubmit}>
+    <button
+      className="login-button"
+      disabled={isButtonDisabled}
+      onClick={handleSubmit}
+    >
       {buttonContent}
     </button>
   );

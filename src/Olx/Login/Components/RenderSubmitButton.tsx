@@ -2,18 +2,10 @@ import React from "react";
 import { ENDPOINTS } from "../../../constants/ENDPOINTS";
 import { FORM_CLASSES } from "../../../constants/FORM_CLASSES";
 import { HTTP_METHODS } from "../../../constants/HTTP_METHODS";
+import { SubmitProps } from "../../../types";
 import { SubmitButton } from "./SubmitButton";
 
-interface Props {
-  currentBookmarkType: FORM_CLASSES;
-  credentials: {
-    email: string;
-    password: string;
-  };
-  isButtonDisabled: boolean;
-}
-
-export const RenderSubmitButton: React.FC<Props> = ({
+export const RenderSubmitButton: React.FC<SubmitProps> = ({
   currentBookmarkType,
   credentials,
   isButtonDisabled,
@@ -23,7 +15,7 @@ export const RenderSubmitButton: React.FC<Props> = ({
       {currentBookmarkType === FORM_CLASSES.LOGIN ? (
         <SubmitButton //logging
           buttonContent={currentBookmarkType}
-          disabled={isButtonDisabled}
+          isButtonDisabled={isButtonDisabled}
           credentials={credentials}
           method={HTTP_METHODS.POST}
           endpoint={ENDPOINTS.LOGIN}
@@ -31,7 +23,7 @@ export const RenderSubmitButton: React.FC<Props> = ({
       ) : (
         <SubmitButton //register
           buttonContent={currentBookmarkType}
-          disabled={isButtonDisabled}
+          isButtonDisabled={isButtonDisabled}
           credentials={credentials}
           method={HTTP_METHODS.POST}
           endpoint={ENDPOINTS.REGISTER}
