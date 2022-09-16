@@ -1,0 +1,41 @@
+.categories-wrapper {
+  color: #022f34;
+  min-height: 50vh;
+  width: 100vw;
+  h1 {
+    text-align: center;
+    margin-top: 10vh;
+  }
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.category-image {
+  border-radius: 100px;
+  height: 7rem;
+  width: 7rem;
+}
+
+.category-title {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  width: max-content;
+  &:hover {
+    color: white;
+    background-color: #022f34;
+  }
+}
+
+.categories-box {
+  padding-left: 10vw;
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
