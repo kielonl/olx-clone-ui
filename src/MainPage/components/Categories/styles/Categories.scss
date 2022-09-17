@@ -3,7 +3,8 @@
   min-height: 50vh;
   width: 100vw;
   h1 {
-    text-align: center;
+    display: flex;
+    justify-content: center;
     margin-top: 10vh;
   }
 }
@@ -19,6 +20,9 @@
   border-radius: 100px;
   height: 7rem;
   width: 7rem;
+  background-clip: padding-box;
+  background-size: cover;
+  background-position: center;
 }
 
 .category-title {
