@@ -4,7 +4,7 @@ const urlInternal = process.env.REACT_APP_API;
 export const makeRequest = async (
   method: string,
   url: string,
-  data: string[] | undefined
+  data: { [key: string]: any } | undefined
 ) => {
   const request = await axios({
     method: method,

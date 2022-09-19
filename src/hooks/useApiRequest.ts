@@ -5,7 +5,7 @@ import { makeRequest } from "../api/makeRequest";
 export const UseApiRequest = (
   method: string,
   url: string,
-  data?: string[] | undefined
+  data?: { [key: string]: any } | undefined
 ): ApiHook => {
   const [response, setResponse] = useState<{ [key: string]: any }>({});
   const [error, setError] = useState<boolean>(false);
