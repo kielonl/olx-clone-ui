@@ -1,7 +1,7 @@
 export interface Offer {
   title: string;
   price: number;
-  image: string | null; //change that later
+  image?: string | undefined; //change that later
   city: string;
   //   createdAt: Date | string; //change that later
   //   following: boolean; //change name later

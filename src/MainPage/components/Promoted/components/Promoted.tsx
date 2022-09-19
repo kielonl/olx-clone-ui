@@ -9,8 +9,6 @@ export const Promoted = () => {
           offerInfo={{
             title: "szybki samochud",
             price: 421,
-            image:
-              "https://i.wpimg.pl/985x0/m.autokult.pl/lamborghini-1819244-960--f4cca3c.jpg",
             city: "Bobrowniki, Łowicz",
           }}
         />
