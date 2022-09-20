@@ -1,0 +1,22 @@
+.footer-wrapper {
+  min-width: 50vh;
+  width: 100vw;
+  border-top: 1px solid #022f34;
+  background-color: #f2f4f5;
+}
+
+.footer-bookmarks {
+  margin-top: 5rem;
+  margin-left: 10vw;
+  padding-bottom: 5vh;
+  max-height: 30vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.footer-bookmark {
+  margin-top: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
