@@ -1,0 +1,27 @@
+.offer-box {
+  color: #022f34;
+  background-color: white;
+  width: max-content;
+  padding: 1rem;
+}
+
+.offer-image {
+  height: 15rem;
+  width: 15rem;
+}
+.offer-details {
+  .offer-title,
+  .offer-price {
+    font-weight: bold;
+    width: fit-content;
+  }
+  .offer-city {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: small;
+  }
+  .offer-title:hover {
+    background-color: #022f34;
+    color: white;
+  }
+}
