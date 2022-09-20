@@ -7,6 +7,13 @@ export interface Offer {
   //   following: boolean; //change name later
   //   hasShipping: boolean;
 }
+
 export interface OfferProps {
   offerInfo: Offer;
+}
+
+export interface ApiHook {
+  response: { [key: string]: any };
+  error: boolean;
+  loading: boolean;
 }
