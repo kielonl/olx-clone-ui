@@ -1,5 +1,5 @@
-import { Categories } from "./components/Categories/components/Categories";
+import { Footer } from "./components/Footer/components/Footer";
 
 export const MainPage = () => {
-  return <Categories />;
+  return <Footer />;
 };

@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css";
-import { MainPage } from "./MainPage/MainPage";
+import { MainPage } from "./MainPage/components/MainPage";
 import { Login } from "./Olx/Login/Components/Login";
 
 function App() {

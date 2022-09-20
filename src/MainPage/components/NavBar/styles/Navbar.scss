@@ -1,0 +1,43 @@
+.navbar-wrapper {
+  min-height: 7vh;
+  width: 100vw;
+  background-color: #022f34;
+}
+
+.navbar-items {
+  color: white;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding-top: 1rem;
+  display: flex;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  margin-right: auto;
+}
+
+.navbar-rightside {
+  div {
+    padding-top: 0.7rem;
+  }
+  display: inline-flex;
+  gap: 3rem;
+  button {
+    margin-top: -2px;
+    font-size: medium;
+    padding: 0.7rem;
+    line-height: 1.25;
+    background-color: white;
+    color: #022f34;
+    outline: none;
+    border: 3px solid white;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+  }
+  button:hover {
+    background-color: #022f34;
+    color: white;
+  }
+}
