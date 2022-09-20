@@ -1,5 +1,3 @@
-declare module "*.webp";
-declare module "*.jpg";
 export interface Offer {
   title: string;
   price: number;
