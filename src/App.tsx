@@ -20,7 +20,15 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
-        <Route path="/new-offer" element={<AddingOffer />} />
+        <Route
+          path="/new-offer"
+          element={
+            <>
+              <Navbar />
+              <AddingOffer />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
