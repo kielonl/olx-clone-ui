@@ -1,6 +1,5 @@
 import { Footer } from "../MainPage/components/Footer/components/Footer";
 import { Header } from "./components/Header/Header";
-import "./styles/AddingOffer.scss";
 export const AddingOffer = () => {
   return (
     <div
