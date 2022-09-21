@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { AddingOffer } from "./AddingOfferPage/AddingOffer";
 
 import "./App.css";
 import { Navbar } from "./MainPage/components/NavBar/components/Navbar";
@@ -19,6 +20,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/new-offer" element={<AddingOffer />} />
       </Routes>
     </Router>
   );
