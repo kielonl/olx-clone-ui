@@ -1,0 +1,19 @@
+.promoted-wrapper {
+  color: #022f34;
+  background-color: #f2f4f5;
+  width: 100vw;
+  min-height: 50vh;
+  h1 {
+    text-align: center;
+    padding-top: 10vh;
+  }
+}
+
+.promoted-box {
+  padding-left: 10vw;
+  max-width: 80vw;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
