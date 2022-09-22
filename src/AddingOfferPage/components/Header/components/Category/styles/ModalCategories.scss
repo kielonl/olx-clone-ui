@@ -1,0 +1,26 @@
+.modal-categories-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.modal-categories-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+}
+
+.modal-categories-single-category {
+  padding: 10px;
+  width: 15rem;
+  margin: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  div {
+    margin-left: 10px;
+  }
+  &:hover {
+    font-weight: bold;
+  }
+}

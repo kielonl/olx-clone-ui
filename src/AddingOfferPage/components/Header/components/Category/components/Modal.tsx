@@ -1,8 +1,7 @@
 import { FC } from "react";
 import { UseApiRequest } from "../../../../../../hooks/useApiRequest";
-import { Categories } from "../../../../../../MainPage/components/Categories/components/Categories";
-import { Category } from "../../../../../../MainPage/components/Categories/components/Category";
 import "../styles/Modal.scss";
+import { ModalCategories } from "./ModalCategories";
 
 interface CategoriesMap {
   name: string;
@@ -21,7 +20,13 @@ export const Modal: FC<ModalProps> = ({ modalState = false, openModal }) => {
 
   const renderCategories = response.data.result.map(
     (categoryInfo: CategoriesMap) => {
-      return <Category title={categoryInfo.name} image={categoryInfo.image} />;
+      return (
+        <ModalCategories
+          title={categoryInfo.name}
+          image={categoryInfo.image}
+          bgColor={categoryInfo.color}
+        />
+      );
     }
   );
 
@@ -35,7 +40,7 @@ export const Modal: FC<ModalProps> = ({ modalState = false, openModal }) => {
       >
         X
       </div>
-      <div className="modal-categories">{renderCategories}</div>
+      <div className="modal-categories-wrapper">{renderCategories}</div>
     </div>
   );
 };

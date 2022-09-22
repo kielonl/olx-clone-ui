@@ -17,12 +17,13 @@
 }
 
 .category-image {
+  color: transparent; // prevents alt text from showing on image
   border-radius: 100px;
   height: 7rem;
   width: 7rem;
   background-clip: padding-box;
   background-size: cover;
-  background-position: center;
+  background-position: cover;
 }
 
 .category-title {
