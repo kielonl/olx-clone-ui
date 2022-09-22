@@ -4,16 +4,22 @@ import "../styles/Modal.scss";
 import { ModalCategories } from "./ModalCategories";
 
 interface CategoriesMap {
+  id: string;
   name: string;
-  color: string;
   image: string;
+  color: string;
 }
 interface ModalProps {
   modalState: boolean;
   openModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setCategory: React.Dispatch<{ [key: string]: any }>;
 }
 
-export const Modal: FC<ModalProps> = ({ modalState = false, openModal }) => {
+export const Modal: FC<ModalProps> = ({
+  modalState = false,
+  openModal,
+  setCategory,
+}) => {
   const { response, loading, error } = UseApiRequest("get", "/category");
   if (loading) return <div>loading...</div>;
   if (error) return <div>error</div>;
@@ -22,9 +28,12 @@ export const Modal: FC<ModalProps> = ({ modalState = false, openModal }) => {
     (categoryInfo: CategoriesMap) => {
       return (
         <ModalCategories
+          categoryId={categoryInfo.id}
           title={categoryInfo.name}
           image={categoryInfo.image}
           bgColor={categoryInfo.color}
+          openModal={openModal}
+          setCategory={setCategory}
         />
       );
     }

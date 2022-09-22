@@ -17,3 +17,9 @@ export interface ApiHook {
   error: boolean;
   loading: boolean;
 }
+
+export interface HeaderProps {
+  setTitle: React.Dispatch<string>;
+  setCategory: React.Dispatch<{ [key: string]: any }>;
+  category: { [key: string]: any };
+}
