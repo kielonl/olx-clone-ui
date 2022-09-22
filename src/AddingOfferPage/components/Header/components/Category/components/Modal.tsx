@@ -1,19 +1,8 @@
 import { FC } from "react";
 import { UseApiRequest } from "../../../../../../hooks/useApiRequest";
+import { ModalProps, CategoriesMap } from "../../../../../../types";
 import "../styles/Modal.scss";
 import { ModalCategories } from "./ModalCategories";
-
-interface CategoriesMap {
-  id: string;
-  name: string;
-  image: string;
-  color: string;
-}
-interface ModalProps {
-  modalState: boolean;
-  openModal: React.Dispatch<React.SetStateAction<boolean>>;
-  setCategory: React.Dispatch<{ [key: string]: any }>;
-}
 
 export const Modal: FC<ModalProps> = ({
   modalState = false,
@@ -25,9 +14,10 @@ export const Modal: FC<ModalProps> = ({
   if (error) return <div>error</div>;
 
   const renderCategories = response.data.result.map(
-    (categoryInfo: CategoriesMap) => {
+    (categoryInfo: CategoriesMap, id: number) => {
       return (
         <ModalCategories
+          key={id}
           categoryId={categoryInfo.id}
           title={categoryInfo.name}
           image={categoryInfo.image}

@@ -15,12 +15,14 @@ export const OfferCategory: FC<Omit<HeaderProps, "setTitle">> = ({
         setCategory={setCategory}
       />
       <div className="input-info required">Kategoria ogłoszenia</div>
-      <input
-        type="text"
+      <div
+        // type="text"
+        className="category-input-field"
         style={{ width: "20%" }}
-        value={category.title}
         onClick={() => setModalState(!modalState)} // change that later
-      />
+      >
+        {category.title}
+      </div>
     </div>
   );
 };

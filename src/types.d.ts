@@ -23,3 +23,33 @@ export interface HeaderProps {
   setCategory: React.Dispatch<{ [key: string]: any }>;
   category: { [key: string]: any };
 }
+
+export interface CategoriesMap {
+  id: string;
+  name: string;
+  image: string;
+  color: string;
+}
+export interface ModalProps {
+  modalState: boolean;
+  openModal: React.Dispatch<React.SetStateAction<boolean>>;
+  setCategory: React.Dispatch<{ [key: string]: any }>;
+}
+
+export interface ModalCategoriesProps {
+  title: string;
+  image: string;
+  bgColor: string;
+  categoryId: string;
+  openModal: React.Dispatch<boolean>;
+  setCategory: React.Dispatch<{ [key: string]: any }>;
+}
+
+export interface OfferTitleProps {
+  setTitle: React.Dispatch<string>;
+}
+
+export interface CategoryProps {
+  title: string;
+  image: string;
+}

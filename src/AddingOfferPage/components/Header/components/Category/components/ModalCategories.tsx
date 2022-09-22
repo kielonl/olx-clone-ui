@@ -1,15 +1,7 @@
 import "../styles/ModalCategories.scss";
 import { FC } from "react";
 import { LightenDarkenColor } from "../../../../../../utils/LightenColor";
-
-interface ModalCategoriesProps {
-  title: string;
-  image: string;
-  bgColor: string;
-  categoryId: string;
-  openModal: React.Dispatch<boolean>;
-  setCategory: React.Dispatch<{ [key: string]: any }>;
-}
+import { ModalCategoriesProps } from "../../../../../../types";
 
 export const ModalCategories: FC<ModalCategoriesProps> = ({
   title,

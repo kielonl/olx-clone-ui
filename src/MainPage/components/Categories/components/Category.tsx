@@ -1,8 +1,6 @@
-interface Props {
-  title: string;
-  image: string;
-}
-export const Category: React.FC<Props> = ({ title, image }) => {
+import { CategoryProps } from "../../../../types";
+
+export const Category: React.FC<CategoryProps> = ({ title, image }) => {
   return (
     <div className="category">
       <img

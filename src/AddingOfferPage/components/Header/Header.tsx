@@ -12,7 +12,7 @@ export const Header: FC<HeaderProps> = ({
   return (
     <div className="header-wrapper">
       <div className="header-box">
-        <OfferTitle />
+        <OfferTitle setTitle={setTitle} />
         <OfferCategory setCategory={setCategory} category={category} />
       </div>
     </div>
