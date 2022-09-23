@@ -1,7 +1,9 @@
 import { FC } from "react";
-import { OfferTitleProps } from "../../../../../../types";
+import { HeaderState } from "../../../../../../types";
 
-export const OfferTitle: FC<OfferTitleProps> = ({ setTitle }) => {
+export const OfferTitle: FC<Omit<HeaderState, "setCategory">> = ({
+  setTitle,
+}) => {
   return (
     <div className="input-parent">
       <h3>Im więcej szczegółów, tym lepiej!</h3>

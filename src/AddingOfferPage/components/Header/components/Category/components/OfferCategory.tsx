@@ -21,7 +21,7 @@ export const OfferCategory: FC<Omit<HeaderProps, "setTitle">> = ({
         style={{ width: "20%" }}
         onClick={() => setModalState(!modalState)} // change that later
       >
-        {category.title}
+        {category.name}
       </div>
     </div>
   );

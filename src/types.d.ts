@@ -18,38 +18,32 @@ export interface ApiHook {
   loading: boolean;
 }
 
-export interface HeaderProps {
-  setTitle: React.Dispatch<string>;
-  setCategory: React.Dispatch<{ [key: string]: any }>;
-  category: { [key: string]: any };
-}
-
-export interface CategoriesMap {
+export interface CategoriesMap extends CategoryProps {
   id: string;
-  name: string;
-  image: string;
   color: string;
 }
+
 export interface ModalProps {
-  modalState: boolean;
   openModal: React.Dispatch<React.SetStateAction<boolean>>;
   setCategory: React.Dispatch<{ [key: string]: any }>;
+  modalState: boolean;
 }
 
-export interface ModalCategoriesProps {
-  title: string;
+export interface CategoryProps {
+  name: string;
   image: string;
-  bgColor: string;
-  categoryId: string;
+}
+export interface ModalCategoriesProps extends CategoryProps {
+  id: string;
+  color: string;
   openModal: React.Dispatch<boolean>;
   setCategory: React.Dispatch<{ [key: string]: any }>;
 }
 
-export interface OfferTitleProps {
+export interface HeaderState {
+  setCategory: React.Dispatch<{ [key: string]: any }>;
   setTitle: React.Dispatch<string>;
 }
-
-export interface CategoryProps {
-  title: string;
-  image: string;
+export interface HeaderProps extends HeaderState {
+  category: { [key: string]: any };
 }

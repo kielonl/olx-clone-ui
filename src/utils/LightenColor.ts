@@ -1,4 +1,4 @@
-export const LightenDarkenColor = (color: string, amount: number) => {
+export const lightenDarkenColor = (color: string, amount: number) => {
   let usePound = false;
 
   if (color[0] === "#") {

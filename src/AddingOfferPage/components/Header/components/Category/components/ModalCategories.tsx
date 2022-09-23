@@ -1,31 +1,31 @@
 import "../styles/ModalCategories.scss";
 import { FC } from "react";
-import { LightenDarkenColor } from "../../../../../../utils/LightenColor";
+import { lightenDarkenColor } from "../../../../../../utils/lightenColor";
 import { ModalCategoriesProps } from "../../../../../../types";
 
 export const ModalCategories: FC<ModalCategoriesProps> = ({
-  title,
+  name,
   image,
-  bgColor,
-  categoryId,
+  color,
+  id,
   openModal,
   setCategory,
 }) => {
   return (
     <div
       className="modal-categories-single-category"
-      style={{ backgroundColor: `${LightenDarkenColor(bgColor, 20)}` }}
+      style={{ backgroundColor: `${lightenDarkenColor(color, 20)}` }}
       onClick={() => {
-        setCategory({ title, categoryId });
+        setCategory({ name, id });
         openModal(false);
       }}
     >
       <img
         src={image}
         className="modal-categories-image"
-        style={{ backgroundColor: bgColor }}
+        style={{ backgroundColor: color }}
       />
-      <div>{title}</div>
+      <div>{name}</div>
     </div>
   );
 };

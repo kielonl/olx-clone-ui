@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { isConstructorDeclaration } from "typescript";
 import { UseApiRequest } from "../../../../../../hooks/useApiRequest";
 import { ModalProps, CategoriesMap } from "../../../../../../types";
 import "../styles/Modal.scss";
@@ -18,10 +19,10 @@ export const Modal: FC<ModalProps> = ({
       return (
         <ModalCategories
           key={id}
-          categoryId={categoryInfo.id}
-          title={categoryInfo.name}
+          id={categoryInfo.id}
+          name={categoryInfo.name}
           image={categoryInfo.image}
-          bgColor={categoryInfo.color}
+          color={categoryInfo.color}
           openModal={openModal}
           setCategory={setCategory}
         />

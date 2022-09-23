@@ -1,6 +1,6 @@
 import { CategoryProps } from "../../../../types";
 
-export const Category: React.FC<CategoryProps> = ({ title, image }) => {
+export const Category: React.FC<CategoryProps> = ({ name, image }) => {
   return (
     <div className="category">
       <img
@@ -10,7 +10,7 @@ export const Category: React.FC<CategoryProps> = ({ title, image }) => {
         }}
         alt="pic"
       />
-      <div className="category-title">{title}</div>
+      <div className="category-title">{name}</div>
     </div>
   );
 };

@@ -7,23 +7,23 @@ export const Categories = () => {
     <div className="categories-wrapper">
       <h1>Kategorie główne</h1>
       <div className="categories-box">
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
-        <Category title="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
+        <Category name="samochud" image={samochud} />
       </div>
     </div>
   );
