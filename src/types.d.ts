@@ -17,3 +17,8 @@ export interface ApiHook {
   error: boolean;
   loading: boolean;
 }
+
+export interface ImagesProps {
+  id: number;
+  url: string;
+}

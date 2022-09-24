@@ -1,15 +1,10 @@
 import { useState } from "react";
+import { ImagesProps } from "../../../../types";
 import "../styles/ChooseImages.scss";
 import { ImageInput } from "./ImageInput";
 
-interface ImagesProps {
-  id: number;
-  url: string;
-}
-
 export const ChooseImages = () => {
   const [images, setImages] = useState<ImagesProps[]>([]);
-  console.log(images);
 
   return (
     <div className="choose-images-wrapper">
