@@ -22,3 +22,9 @@ export interface ImagesProps {
   id: number;
   url: string;
 }
+
+export interface ImageInputProps {
+  images: any;
+  setImage: React.Dispatch<ImagesProps[]>;
+  id: number;
+}

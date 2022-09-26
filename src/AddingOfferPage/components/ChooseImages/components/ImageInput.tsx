@@ -1,23 +1,17 @@
 import "../styles/ImageInput.scss";
 import { FC } from "react";
-import { ImagesProps } from "../../../../types";
+import { ImageInputProps, ImagesProps } from "../../../../types";
 
 const imagePlaceholder = process.env.REACT_APP_IMAGE_PLACEHOLDER;
 
-interface ImageInputProps {
-  image?: string | undefined;
-  images: any;
-  setImage: React.Dispatch<ImagesProps[]>;
-  id: number;
-}
-
 export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
   const updateItem = (e: any, id: number) => {
-    const [file] = e.target.files; //try to do something the repeatability with it later
+    const [file] = e.target.files; //try to do something with the repeatability later
     let reader = new FileReader();
     reader.readAsDataURL(file);
+
     reader.onload = () => {
-      const newItems = images.map((img: any) => {
+      const newItems = images.map((img: ImagesProps) => {
         if (id === img.id) {
           return { ...img, url: reader.result };
         }
@@ -32,6 +26,7 @@ export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
     const [file] = e.target.files;
     let reader = new FileReader();
     reader.readAsDataURL(file);
+
     reader.onloadend = () => {
       if (images.length === 0) {
         return setImage([...images, { id: id, url: reader.result }]);
@@ -45,10 +40,11 @@ export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
       });
     };
   };
-  // console.log(images);
-  const findImage = images.find((img: any) => {
+
+  const findImage = images.find((img: ImagesProps) => {
     return id === img.id;
   });
+
   return (
     <>
       <label
