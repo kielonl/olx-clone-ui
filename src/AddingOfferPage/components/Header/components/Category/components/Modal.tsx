@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { isConstructorDeclaration } from "typescript";
 import { UseApiRequest } from "../../../../../../hooks/useApiRequest";
 import { ModalProps, CategoriesMap } from "../../../../../../types";
 import "../styles/Modal.scss";

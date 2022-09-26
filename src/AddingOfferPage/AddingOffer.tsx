@@ -5,6 +5,7 @@ import { Header } from "./components/Header/Header";
 export const AddingOffer = () => {
   const [title, setTitle] = useState<string>("");
   const [category, setCategory] = useState<{ [key: string]: any }>({});
+  console.log(title); //removes eslint warning
   return (
     <div
       className="adding-offer-wrapper"

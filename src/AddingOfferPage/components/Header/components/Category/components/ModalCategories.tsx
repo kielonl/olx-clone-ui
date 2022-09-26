@@ -1,6 +1,6 @@
 import "../styles/ModalCategories.scss";
 import { FC } from "react";
-import { lightenDarkenColor } from "../../../../../../utils/lightenColor";
+import { lightenDarkenColor } from "../../../../../../utils/LightenColor";
 import { ModalCategoriesProps } from "../../../../../../types";
 
 export const ModalCategories: FC<ModalCategoriesProps> = ({
@@ -24,6 +24,7 @@ export const ModalCategories: FC<ModalCategoriesProps> = ({
         src={image}
         className="modal-categories-image"
         style={{ backgroundColor: color }}
+        alt=""
       />
       <div>{name}</div>
     </div>
