@@ -1,28 +1,27 @@
-import { FC, useState } from "react";
-import { HeaderProps } from "../../../../../../types";
+import { useState } from "react";
+import { InputComponent } from "../../../../InputComponent";
 import { Modal } from "./Modal";
 
-export const OfferCategory: FC<Omit<HeaderProps, "setTitle">> = ({
-  setCategory,
-  category,
-}) => {
+export const OfferCategory = () => {
   const [modalState, setModalState] = useState<boolean>(false);
+  const [category, setCategory] = useState<{ [key: string]: any }>({});
   return (
-    <div className="input-parent">
-      <Modal
-        modalState={modalState}
-        openModal={setModalState}
-        setCategory={setCategory}
-      />
-      <div className="input-info required">Kategoria ogłoszenia</div>
-      <div
-        // type="text"
-        className="category-input-field"
-        style={{ width: "20%" }}
-        onClick={() => setModalState(!modalState)} // change that later
-      >
-        {category.name}
-      </div>
-    </div>
+    <InputComponent>
+      <>
+        <Modal
+          modalState={modalState}
+          openModal={setModalState}
+          setCategory={setCategory}
+        />
+        <div className="input-info required">Kategoria ogłoszenia</div>
+        <div
+          className="category-input-field"
+          style={{ width: "20%" }}
+          onClick={() => setModalState(!modalState)} // change that later
+        >
+          {category.name}
+        </div>
+      </>
+    </InputComponent>
   );
 };

@@ -33,17 +33,12 @@ export interface CategoryProps {
   name: string;
   image: string;
 }
-export interface ModalCategoriesProps extends CategoryProps {
-  id: string;
-  color: string;
+export interface ModalCategoriesProps {
+  categoryInfo: { name: string; image: string; id: string; color: string };
   openModal: React.Dispatch<boolean>;
   setCategory: React.Dispatch<{ [key: string]: any }>;
 }
 
-export interface HeaderState {
-  setCategory: React.Dispatch<{ [key: string]: any }>;
-  setTitle: React.Dispatch<string>;
-}
-export interface HeaderProps extends HeaderState {
-  category: { [key: string]: any };
+export interface FormComponentProps {
+  children: JSX.Element;
 }

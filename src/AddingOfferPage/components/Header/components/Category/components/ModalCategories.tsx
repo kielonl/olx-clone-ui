@@ -4,29 +4,28 @@ import { lightenDarkenColor } from "../../../../../../utils/LightenColor";
 import { ModalCategoriesProps } from "../../../../../../types";
 
 export const ModalCategories: FC<ModalCategoriesProps> = ({
-  name,
-  image,
-  color,
-  id,
+  categoryInfo,
   openModal,
   setCategory,
 }) => {
   return (
     <div
       className="modal-categories-single-category"
-      style={{ backgroundColor: `${lightenDarkenColor(color, 20)}` }}
+      style={{
+        backgroundColor: `${lightenDarkenColor(categoryInfo.color, 20)}`,
+      }}
       onClick={() => {
-        setCategory({ name, id });
+        setCategory({ name: categoryInfo.name, id: categoryInfo.id });
         openModal(false);
       }}
     >
       <img
-        src={image}
+        src={categoryInfo.image}
         className="modal-categories-image"
-        style={{ backgroundColor: color }}
+        style={{ backgroundColor: categoryInfo.color }}
         alt=""
       />
-      <div>{name}</div>
+      <div>{categoryInfo.name}</div>
     </div>
   );
 };

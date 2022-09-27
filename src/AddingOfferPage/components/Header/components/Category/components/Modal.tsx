@@ -18,10 +18,12 @@ export const Modal: FC<ModalProps> = ({
       return (
         <ModalCategories
           key={id}
-          id={categoryInfo.id}
-          name={categoryInfo.name}
-          image={categoryInfo.image}
-          color={categoryInfo.color}
+          categoryInfo={{
+            name: categoryInfo.name,
+            id: categoryInfo.id,
+            color: categoryInfo.color,
+            image: categoryInfo.image,
+          }}
           openModal={openModal}
           setCategory={setCategory}
         />
