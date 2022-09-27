@@ -17,8 +17,3 @@ export interface ApiHook {
   error: boolean;
   loading: boolean;
 }
-
-export interface DescriptionProps {
-  description: string;
-  setDescription: React.Dispatch<string>;
-}

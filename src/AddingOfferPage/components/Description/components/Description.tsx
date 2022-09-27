@@ -1,15 +1,13 @@
-import { FC } from "react";
-import { DescriptionProps } from "../../../../types";
+import { useState } from "react";
 import {
   descriptionValidation,
   wordCounter,
 } from "../../../utils/descriptionValidation";
 import "../styles/Description.scss";
 
-export const Description: FC<DescriptionProps> = ({
-  description,
-  setDescription,
-}) => {
+export const Description = () => {
+  const [description, setDescription] = useState<string>("");
+
   return (
     <div className="description-box">
       <div className="required">Opis</div>
