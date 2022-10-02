@@ -17,3 +17,7 @@ export interface ApiHook {
   error: boolean;
   loading: boolean;
 }
+
+export interface FormComponentProps {
+  children: JSX.Element;
+}
