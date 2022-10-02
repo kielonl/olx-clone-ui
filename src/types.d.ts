@@ -21,3 +21,7 @@ export interface ApiHook {
 export interface FormComponentProps {
   children: JSX.Element;
 }
+
+export interface ResultBoxProps {
+  placeInfo: { [key: string]: any };
+}
