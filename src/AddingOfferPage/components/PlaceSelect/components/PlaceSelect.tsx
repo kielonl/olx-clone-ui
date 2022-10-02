@@ -5,28 +5,47 @@ import { FormComponent } from "../../FormComponent";
 import { RenderResultBox } from "./RenderResultBox";
 
 export const PlaceSelect = () => {
-  const [postCode, setPostCode] = useState("");
-  const [result, setResult] = useState<any>([]);
+  const [search, setSearch] = useState<{ [key: string]: any }>({ search: "" });
+  const [responseResult, setResponseResult] = useState<string[]>([]);
+
   useEffect(() => {
-    if (postCode === "") {
+    if (!search.search) {
       return;
     }
+
+    if (search.isSet) {
+      return;
+    }
+
     const getData = setTimeout(() => {
       axios
-        .post(`http://localhost:8080/localization`, { place: postCode })
+        .post(`http://localhost:8080/localization`, {
+          place: search.search,
+        })
         .then((response) => {
-          setResult(response.data.res);
+          setResponseResult(response.data.res);
         });
     }, 1000);
 
     return () => clearTimeout(getData);
-  }, [postCode]);
+  }, [search]);
 
   return (
     <FormComponent>
       <div className="result-box-main">
-        <input type="text" onChange={(e) => setPostCode(e.target.value)} />
-        {result !== "[]" && <RenderResultBox placeInfo={result} />}
+        <input
+          type="text"
+          onChange={(e) => setSearch({ search: e.target.value })}
+          value={
+            search.place === undefined ? search.search : search.place.place
+          }
+        />
+
+        <div style={search.isSet ? { display: "none" } : { opacity: "1" }}>
+          {responseResult.length !== 0 && (
+            <RenderResultBox placeInfo={responseResult} setPlace={setSearch} />
+          )}
+        </div>
       </div>
     </FormComponent>
   );

@@ -24,4 +24,5 @@ export interface FormComponentProps {
 
 export interface ResultBoxProps {
   placeInfo: { [key: string]: any };
+  setPlace: React.Dispatch<{ [key: string]: any }>;
 }
