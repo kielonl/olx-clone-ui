@@ -20,11 +20,11 @@ export interface ApiHook {
 
 export interface ImagesProps {
   id: number;
-  url: string;
+  url: string | undefined;
 }
 
 export interface ImageInputProps {
   images: any;
-  setImage: React.Dispatch<ImagesProps[]>;
+  setImage: React.Dispatch<any>;
   id: number;
 }

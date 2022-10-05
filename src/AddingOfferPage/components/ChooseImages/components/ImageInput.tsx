@@ -44,23 +44,22 @@ export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
   const findImage = images.find((img: ImagesProps) => {
     return id === img.id;
   });
-
   return (
-    <>
+    <div>
       <label
-        draggable={!!findImage}
         className="custom-file-input"
         style={{
           backgroundImage: `url(${
-            !findImage ? imagePlaceholder : findImage.url
+            !findImage.url ? imagePlaceholder : findImage.url
           })`,
+          cursor: `${!!findImage.url ? "grab" : "point"}`,
         }}
       >
         <input type="file" onChange={(e) => sendFile(e, id)} />
-        <span className={findImage ? "image-added" : "image-not-added"}>
+        <span className={findImage.url ? "image-added" : "image-not-added"}>
           Dodaj zdjecie
         </span>
       </label>
-    </>
+    </div>
   );
 };
