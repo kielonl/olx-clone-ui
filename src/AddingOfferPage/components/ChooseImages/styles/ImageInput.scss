@@ -1,8 +1,8 @@
 .custom-file-input {
   display: flex;
   align-items: center;
-  height: 5rem;
-  width: 5rem;
+  height: 10rem;
+  width: 10rem;
   background-color: #f2f4f5;
   border-radius: 3px;
   margin-top: 10px;
@@ -22,5 +22,7 @@
   display: none;
 }
 .image-not-added {
+  width: 100%;
   display: flex;
+  justify-content: center;
 }
