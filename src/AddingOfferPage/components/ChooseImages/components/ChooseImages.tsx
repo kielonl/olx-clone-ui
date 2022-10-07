@@ -2,8 +2,13 @@ import { useRef, useState } from "react";
 import { ImagesProps } from "../../../../types";
 import { ImageInput } from "./ImageInput";
 import "../styles/ChooseImages.scss";
+import { findEmpty } from "./utils";
 export const ChooseImages = () => {
   const [images, setImages] = useState<ImagesProps[]>([
+    {
+      url: undefined,
+      id: 0,
+    },
     {
       url: undefined,
       id: 1,
@@ -32,24 +37,23 @@ export const ChooseImages = () => {
       url: undefined,
       id: 7,
     },
-    {
-      url: undefined,
-      id: 8,
-    },
   ]);
-
-  const dragItem = useRef<any>(null);
+  const dragItem = useRef<any>(null); //change that later
   const dragOverItem = useRef<any>(null);
 
   const handleSort = () => {
     let _images = [...images];
     const draggedItemContent = _images.splice(dragItem.current, 1)[0];
 
+    if (images[dragOverItem.current].url === undefined) {
+      dragOverItem.current = findEmpty(images)?.id;
+    }
+
     _images.splice(dragOverItem.current, 0, draggedItemContent);
+    console.log(_images);
 
     dragItem.current = null;
     dragOverItem.current = null;
-
     setImages(_images);
   };
 

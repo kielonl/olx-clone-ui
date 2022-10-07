@@ -1,5 +1,4 @@
 import axios from "axios";
-
 const urlInternal = process.env.REACT_APP_API;
 export const makeRequest = async (
   method: string,

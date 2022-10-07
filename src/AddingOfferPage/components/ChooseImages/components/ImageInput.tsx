@@ -1,10 +1,12 @@
 import "../styles/ImageInput.scss";
 import { FC } from "react";
 import { ImageInputProps, ImagesProps } from "../../../../types";
+import { findEmpty, findImage } from "./utils";
 
 const imagePlaceholder = process.env.REACT_APP_IMAGE_PLACEHOLDER;
 
 export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
+  console.log(id);
   const updateItem = (e: any, id: number) => {
     const [file] = e.target.files; //try to do something with the repeatability later
     let reader = new FileReader();
@@ -40,23 +42,23 @@ export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
       });
     };
   };
-
-  const findImage = images.find((img: ImagesProps) => {
-    return id === img.id;
-  });
+  const foundImage = findImage(images, id);
   return (
     <div>
       <label
         className="custom-file-input"
         style={{
           backgroundImage: `url(${
-            !findImage.url ? imagePlaceholder : findImage.url
+            !foundImage.url ? imagePlaceholder : foundImage.url
           })`,
-          cursor: `${!!findImage.url ? "grab" : "point"}`,
+          cursor: `${!!foundImage.url ? "grab" : "point"}`,
         }}
       >
-        <input type="file" onChange={(e) => sendFile(e, id)} />
-        <span className={findImage.url ? "image-added" : "image-not-added"}>
+        <input
+          type="file"
+          onChange={(e) => sendFile(e, findEmpty(images).id)}
+        />
+        <span className={foundImage.url ? "image-added" : "image-not-added"}>
           Dodaj zdjecie
         </span>
       </label>
