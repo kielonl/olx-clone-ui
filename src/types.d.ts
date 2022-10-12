@@ -24,6 +24,7 @@ export interface ImagesProps {
 }
 
 export interface ImageInputProps {
+  readyToUse: any;
   images: any;
   setImage: React.Dispatch<any>;
   id: number;

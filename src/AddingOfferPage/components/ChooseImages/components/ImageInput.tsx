@@ -5,43 +5,22 @@ import { findEmpty, findImage } from "./utils";
 
 const imagePlaceholder = process.env.REACT_APP_IMAGE_PLACEHOLDER;
 
-export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
-  console.log(id);
-  const updateItem = (e: any, id: number) => {
-    const [file] = e.target.files; //try to do something with the repeatability later
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-
-    reader.onload = () => {
-      const newItems = images.map((img: ImagesProps) => {
-        if (id === img.id) {
-          return { ...img, url: reader.result };
-        }
-        return img;
-      });
-      setImage(newItems);
-      console.log(images);
-    };
-  };
-
-  const sendFile = (e: any, id: number) => {
-    const [file] = e.target.files;
-    let reader = new FileReader();
-    reader.readAsDataURL(file);
-
-    reader.onloadend = () => {
-      if (images.length === 0) {
-        return setImage([...images, { id: id, url: reader.result }]);
+export const ImageInput: FC<ImageInputProps> = ({
+  images,
+  setImage,
+  id,
+  readyToUse,
+}) => {
+  const updateItem = (id: number, e?: any) => {
+    const newItems = images.map((img: ImagesProps) => {
+      if (id === img.id) {
+        return { ...img, url: images };
       }
-
-      images.find((img: ImagesProps) => {
-        if (id === img.id) {
-          return updateItem(e, id);
-        }
-        return setImage([...images, { id: id, url: reader.result }]);
-      });
-    };
+      return img;
+    });
+    setImage(newItems);
   };
+
   const foundImage = findImage(images, id);
   return (
     <div>
@@ -56,12 +35,18 @@ export const ImageInput: FC<ImageInputProps> = ({ images, setImage, id }) => {
       >
         <input
           type="file"
-          onChange={(e) => sendFile(e, findEmpty(images).id)}
+          onChange={(e) => {
+            if (findImage(images, id).url) {
+              return updateItem(readyToUse(e, id), id);
+            }
+            readyToUse(e, findEmpty(images).id);
+          }}
         />
         <span className={foundImage.url ? "image-added" : "image-not-added"}>
           Dodaj zdjecie
         </span>
       </label>
+      <button onClick={() => console.log(images)}>log images</button>
     </div>
   );
 };

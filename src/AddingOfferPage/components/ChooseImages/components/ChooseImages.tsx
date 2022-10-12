@@ -41,6 +41,21 @@ export const ChooseImages = () => {
   const dragItem = useRef<any>(null); //change that later
   const dragOverItem = useRef<any>(null);
 
+  const readyToUse = (e: any, id: number) => {
+    const [file] = e.target.files;
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => {
+      const newItems = images.map((img: any) => {
+        if (id === img.id) {
+          return { ...img, url: reader.result };
+        }
+        return img;
+      });
+      setImages(newItems);
+    };
+  };
+
   const handleSort = () => {
     let _images = [...images];
     const draggedItemContent = _images.splice(dragItem.current, 1)[0];
@@ -70,7 +85,12 @@ export const ChooseImages = () => {
             onDragEnd={handleSort}
             onDragOver={(e) => e.preventDefault()}
           >
-            <ImageInput images={images} setImage={setImages} id={item.id} />
+            <ImageInput
+              images={images}
+              setImage={setImages}
+              id={item.id}
+              readyToUse={readyToUse}
+            />
           </div>
         ))}
       </div>
