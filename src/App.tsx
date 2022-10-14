@@ -4,6 +4,7 @@ import "./App.css";
 import { Navbar } from "./MainPage/components/NavBar/components/Navbar";
 import { MainPage } from "./MainPage/MainPage";
 import { Login } from "./Olx/Login/Components/Login";
+import { HookTest } from "./test/HookTest";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/test" element={<HookTest />} />
       </Routes>
     </Router>
   );
