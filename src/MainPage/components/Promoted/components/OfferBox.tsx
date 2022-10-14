@@ -13,7 +13,7 @@ export const OfferBox: React.FC<OfferProps> = ({ offerInfo }) => {
         />
         <div className="offer-details">
           <div className="offer-title">{offerInfo.title}</div>
-          <div className="offer-city">{offerInfo.city}</div>
+          <div className="offer-city">{offerInfo.localization}</div>
           <div className="offer-price">{offerInfo.price} zł</div>
         </div>
       </div>
