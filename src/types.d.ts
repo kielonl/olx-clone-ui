@@ -11,6 +11,8 @@ export interface Offer {
 
 export interface OfferProps {
   offerInfo: Offer;
+  boxWidth?: string;
+  isHorizontal?: boolean;
 }
 
 export interface ApiHook {

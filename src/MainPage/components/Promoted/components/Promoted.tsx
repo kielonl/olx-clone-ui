@@ -11,6 +11,8 @@ export const Promoted = () => {
             price: 421,
             localization: "Bobrowniki, Łowicz",
           }}
+          boxWidth="15rem"
+          isHorizontal={false}
         />
         <OfferBox
           offerInfo={{
@@ -20,6 +22,8 @@ export const Promoted = () => {
               "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MWP22_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1591634643000",
             localization: "Warszawa, śródmieście",
           }}
+          boxWidth="15rem"
+          isHorizontal={false}
         />
       </div>
     </div>
