@@ -17,3 +17,9 @@ export interface ApiHook {
   error: boolean;
   loading: boolean;
 }
+
+export interface CategoriesMap {
+  name: string;
+  color: string;
+  image: string;
+}
