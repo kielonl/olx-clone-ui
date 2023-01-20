@@ -1,11 +1,13 @@
+import { Footer } from "../MainPage/components/Footer/components/Footer";
 import { Navbar } from "../MainPage/components/NavBar/components/Navbar";
-import { ContactDetails } from "./components/ContactDetails/components/ContactDetails";
+import { Description } from "./components/Description/components/Description";
 
 export const AddingOffer = () => {
   return (
-    <div style={{ background: "#f2f4f5" }}>
+    <div style={{ backgroundColor: "#f2f4f5" }}>
       <Navbar />
-      <ContactDetails />
+      <Description />
+      <Footer />
     </div>
   );
 };
