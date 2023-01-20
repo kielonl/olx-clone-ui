@@ -1,0 +1,35 @@
+.required::after {
+  content: "*";
+}
+
+.form-component-box {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  padding: 30px;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  max-height: 40vh;
+  border-radius: 10px;
+  background-color: white;
+
+  input,
+  .category-input-field {
+    -webkit-appearance: none;
+    width: 100%;
+    padding: 20px;
+    background-color: #f0f2f3;
+    border: none;
+    border-bottom: 1px solid green;
+    outline: none;
+    font-size: larger;
+  }
+  .input-parent {
+    margin: 20px;
+  }
+}
+
+.input-info {
+  font-size: smaller;
+}
