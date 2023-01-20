@@ -9,8 +9,10 @@ export const Promoted = () => {
           offerInfo={{
             title: "szybki samochud",
             price: 421,
-            city: "Bobrowniki, Łowicz",
+            localization: "Bobrowniki, Łowicz",
           }}
+          boxWidth="15rem"
+          isHorizontal={false}
         />
         <OfferBox
           offerInfo={{
@@ -18,8 +20,10 @@ export const Promoted = () => {
             price: 419,
             image:
               "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/MWP22_AV2?wid=1144&hei=1144&fmt=jpeg&qlt=90&.v=1591634643000",
-            city: "Warszawa, śródmieście",
+            localization: "Warszawa, śródmieście",
           }}
+          boxWidth="15rem"
+          isHorizontal={false}
         />
       </div>
     </div>
